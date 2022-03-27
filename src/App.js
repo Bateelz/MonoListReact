@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
+import React from "react";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import TodosContainer from './components/TodosContainer'
+import Main from './main'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="container">
-        <div className="header">
-          <h1>my List</h1>
-        </div>
-        <TodosContainer />
-      </div>
+
+
+function App(){
+ 
+
+  return (
+    <div>
+      <Main />
+    </div>
+
     );
-  }
-}
 
-export default App
+    
+
+     
+ 
+};
+
+export default App;

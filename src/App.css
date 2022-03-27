@@ -1,108 +1,253 @@
-ul.taskList {
-	padding: 0 25px;
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand');
+
+*{
+    font-family: 'quicksand',Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
-li.task {
-	list-style-type: none;
-	font-family: Tahoma;
-	font-size: 1.2em;
-	padding: 40px 0;
-	border-bottom: 1px solid #ccc;
+body{
+    background:#fafafa ;
+   
 }
 
-li.task:hover .deleteTaskBtn {
-	visibility: visible;
-	opacity: 1;
+.form-modal{
+    position:relative;
+    width:400px;
+    height:700px;
+    margin-top:3em;
+    margin-bottom:3em;
+    left:50%;
+    transform:translateX(-50%);
+    background:#fff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1)
 }
 
-input.taskCheckbox {
-	position: relative;
-	float: left;
-	margin-right: 10px;
-	-webkit-appearance: none;
-	width: 20px;
-	height: 20px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	outline: none;
-	margin-left: 5px;
-	text-align: center;
-	cursor: pointer;
-	font-weight: bold;
+.form-modal button{
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    font-size:1em;
+    z-index: 2;
+    outline: none;
+    background:#fff;
+    transition:0.2s;
 }
 
-input.taskCheckbox:checked:after {
-	color: green;
-	content: "\2713";
-	display: block;
-	font-size: 17px;
-	height: 17px;
-	position: absolute;
-	width: 17px;
-	left: 0.5px;
-	bottom: 2px;
+.form-modal .btn{
+    border:none;
+    font-weight: bold;
+    font-size:1em;
+  
+    transition:0.5s;
+    border:1px solid #ebebeb;
+    margin-bottom:0.5em;
+    margin-top:0.5em;
 }
 
-input.taskCheckbox + label.taskLabel {
-	color: black;
+.form-modal .login , .form-modal .signup{
+    background:#e30000;
+    color:#fff;
 }
 
-input.taskCheckbox:checked + label.taskLabel {
-	text-decoration: line-through;
-	color: #656565;
+.form-modal .login:hover , .form-modal .signup:hover{
+    background:#222;
 }
 
-input[placeholder] {
-	font-size: 1.1em;
+.form-toggle{
+    position: relative;
+    width:100%;
+    height:auto;
 }
 
-.container {
-	width: 40%;
-	height: 800px;
-	position: relative;
-	margin: 0 auto;
-	border-radius: 5px;
+
+
+.form-toggle img p{
+    float:left;
+    padding:1.5em;
+    margin-top:1.5em;
+   
+    border:none;
+    transition: 0.2s;
+    font-size:1.1em;
+    font-weight: bold;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
-.header {
-	color: black;
-	padding: 5px;
-	text-align: center;
-	font-family: Tahoma, sans-serif;
+
+
+.form-toggle button:nth-child(1){
+    border-bottom-right-radius: 20px;
 }
 
-.inputContainer {
-	padding: 15px;
+.form-toggle button:nth-child(2){
+    border-bottom-left-radius: 20px;
 }
 
-.inputContainer .taskInput {
-	padding: 10px;
-	width: 100%;
-	border-radius: 25px;
-	box-sizing: border-box;
+#login-toggle{
+    background:#e30000;;
+    color:#ffff;
 }
 
-.listWrapper {
-	position: absolute;
-	bottom: 50px;
-	top: 160px;
-	right: 0;
-	left: 0;
-	overflow: auto;
+.form-modal form{
+    position: relative;
+    width:80%;
+    height:60%;
+    left:50%;
+    transform:translateX(-50%);  
 }
 
-.deleteTaskBtn {
-	float: right;
-	color: red;
-	background: rgba(0,0,0,0);
-	font-size: 20px;
-	font-weight: bold;
-	border: 1px solid white;
-	border-radius: 50%;
-	padding: 10px 5px;
-	visibility: hidden;
-	opacity: 0;
-	line-height: 0;
-	margin-right: 5px;
-	cursor: default;
+#login-form , #signup-form{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding-bottom:1em;
+   
 }
+
+#signup-form{
+    display: none;
+}
+
+
+#login-form button , #signup-form button{
+    width:100%;
+    margin-top:0.5em;
+    padding:0.6em;
+}
+
+.form-modal input{
+    position: relative;
+    width:100%;
+    font-size:1em;
+    /* padding:1.2em 1.7em 1.2em 1.7em; */
+    margin-top:0.6em;
+    margin-bottom:0.6em;
+    border:0.5px solid gray ;
+    background:white;
+    outline:none;
+    font-weight: bold;
+    transition:0.4s;
+}
+.form-modal label{
+   
+    font-weight: bold;
+  
+}
+
+.form-modal input:focus , .form-modal input:active{
+    transform:scaleX(1.02);
+}
+
+.form-modal input::-webkit-input-placeholder{
+    color:#222;
+}
+
+
+.form-modal p{
+    font-size:13px;
+    font-weight: bold;
+}
+
+.form-modal p {
+    color:black;
+    text-decoration: none;
+    transition:0.2s;
+}
+.form-modal a{
+  color:#e30000;
+  text-decoration: none;
+  transition:0.2s;
+}
+.form-modal p a:hover{
+    color:#222;
+}
+
+
+.form-modal i {
+    position: absolute;
+    left:10%;
+    top:50%;
+    transform:translateX(-10%) translateY(-50%); 
+}
+
+
+
+.-box-sd-effect:hover{
+    box-shadow: 0 4px 8px hsla(210,2%,84%,.2);
+}
+
+@media only screen and (max-width:500px){
+    .form-modal{
+        width:100%;
+    }
+}
+
+@media only screen and (max-width:400px){
+    i{
+        display: none!important;
+    }
+}
+
+
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #e30000;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  
